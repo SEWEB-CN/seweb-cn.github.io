@@ -1,0 +1,53 @@
+td.holiday {
+	background-color: #dff0d8;
+}
+
+td.today {
+	background-color: #d9edf7;
+}
+
+td.day {
+	width: 14%;
+	cursor: pointer;
+	text-align: center;
+}
+
+td.leave {
+	/*background-color: #fcf8e3;*/
+	background-image: url('../img/leave.png');
+	background-repeat:no-repeat;
+	background-position:right bottom; 
+}
+
+tr.listItem td {
+  width: 16%;
+  cursor: pointer;
+}
+
+tr.listItemReadOnly td {
+  width: 16%;
+}
+
+.table th {
+	text-align: center;
+}
+
+#single-section label, #single-section input {
+	display: block;
+	margin-bottom: 10px;
+	float: left;
+}
+
+#leave-event-create {
+        max-width: 300px;
+        padding: 19px 29px 29px;
+        margin: 0 auto 20px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+                border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}

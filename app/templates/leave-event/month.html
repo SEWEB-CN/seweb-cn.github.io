@@ -1,0 +1,54 @@
+<!-- <div id='calendar'></div> -->
+<div class="btn-group" id="month-switcher">
+  <button class="btn" id="pre">Pre</button>
+  <button class="btn" id="next">Next</button>
+</div>
+<section id="calendar-section">
+	<table class="table table-bordered" id="calendar" >
+	    <caption>	        
+	    </caption>
+	    <thead>
+	        <tr>
+	            <th class="success">Sun</th>
+	            <th>Mon</th>
+	            <th>Tue</th>
+	            <th>Wed</th>
+	            <th>Thu</th>
+	            <th>Fri</th>
+	            <th class="success">Sat</th>
+	        </tr>
+	    </thead>
+	</table>
+</section>
+<section id="daily-section">
+	<table class="table" id="daily">
+	</table>
+</section>
+<!-- <section id="single-section" style="display:none">
+	<table class="table" id="single-table"></table>
+	<p id="note"></p>
+	<hr>
+	<button class="btn" id="delete">Delete</button>
+	<button class="btn" id="close">Close</button>
+</section> -->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Leave Details</h4>
+      </div>
+      <div class="modal-body">
+        <table class="table" id="single-table"></table>
+		<p id="note"></p>
+		<hr>
+      </div>
+      <div class="modal-footer">
+      	<button type="button" class="btn btn-danger" data-dismiss="modal" id="delete">Delete</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>     
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

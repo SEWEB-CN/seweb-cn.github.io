@@ -1,0 +1,100 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <title>Mobile Leave Calendar v0.0.1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" type="text/css" href="app/styles/login.css">
+    <script src="vendor/jam/jquery/dist/jquery.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/md5/jquery.md5.js"></script>
+    <script type="text/javascript">
+        var api_url = "";
+        var api_key = "";
+        var MONGOHQ_URL = "https://api.mongohq.com/databases/calendar/collections/";
+        var MONGOHQ_KEY = "?_apikey=k7kgltapr9aeepca7z5t";
+
+        var MONGOLAB_KEY = "?apiKey=uIPdv1LT9_YA7Bd84BnBfKGhjA5IVW11";
+        var MONGOLAB_URL = "https://api.mongolab.com/api/1/databases/calendar/collections/";
+
+      $(document).ready(function() {
+        api_key = MONGOHQ_KEY;
+        api_url = MONGOHQ_URL;
+        $('#login').submit(function(){
+          console.log($('#login').attr('class'));
+          var username = $('#username').val();
+          var password = $('#password').val();
+          if (username.length <= 0) {
+            $('#username').addClass( "errorInput" );
+          };
+
+          if (password.length <= 0) {
+            $('#password').addClass( "errorInput" );
+          };
+          var queryStr = "&userid=sesa194027";
+          $.ajax({
+                type: "GET",
+                url: api_url+"users/documents"+api_key,
+                success: function( data ) {
+                 // userDetails = jQuery.parseJSON(data);
+                  $("#users").empty();
+                  $.each(data,function(index,user){
+                    //create span for user
+                    var userSpan = $('<span></span>');
+                    userSpan.html("Name:"+user.userid+"   "+
+                      "NickName:"+user.username+"   "+
+                      "Location:"+user.location+"   "+
+                      "Role:"+user.role+"<br>");
+                    userSpan.attr("id","user"+index);
+                    userSpan.css('font-weight','bold');
+                    userSpan.css('color','#2F609F');
+                    $('#users').append(userSpan);
+                  });
+                  $("#users").show();                  
+                },
+                error: function(XMLHttpRequest, textStatus,errorThrow){
+                  $("#users").empty();
+                  $('#users').html(XMLHttpRequest.status+"<br>"+XMLHttpRequest.readyState+"<br>"+textStatus+"<br>"+errorThrow);
+                  $("#users").show();
+                }
+              });
+
+        });
+        $('#MD5Button').click(function(){
+          var username = $('#name').val();
+          var password = $('#word').val();
+          var token = "MLC";
+          var encryptPWD = $.md5(username+token+password);
+          console.log("MD5:"+encryptPWD);
+          var result = "MD5 String:"
+          $('#MD5Token').html(result+encryptPWD);
+        });
+      });
+    </script>
+    </head>
+    <body>
+    <div class="container">
+      <form id="login" class="form-signin" action="#">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <input id="username" type="text" class="input-block-level" placeholder="SESA ID">
+        <input id="password" type="password" class="input-block-level" placeholder="Password">
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+        <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+      </form>
+      <div id="users" style="display:none">
+        
+      </div>
+<div style="clear: both"></div>
+      <div id="generalMD5" style="display:block">
+        <input id="name" type="text" class="input-block-level" placeholder="SESA ID">
+        <input id="word" type="text" class="input-block-level" placeholder="Password">
+        <button id="MD5Button"class="btn btn-large btn-primary" type="button">General MD5 String</button>
+        <div style="clear: both"></div>
+        <span id="MD5Token"></span>
+      </div>
+    </div>
+    </body>
+    </html>

@@ -1,0 +1,31 @@
+<div class="btn-group" id="list-switcher">
+  <button class="btn" id="preList">Pre</button>
+  <button class="btn" id="nextList">Next</button>
+</div>
+<section id="monthly-section">
+	<table class="table table-striped" id="monthly">
+		<caption>	        
+	    </caption>
+	</table>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal-list" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Leave Details</h4>
+      </div>
+      <div class="modal-body">
+        <table class="table" id="single-table-list"></table>
+		<p id="note-list"></p>
+		<hr>
+      </div>
+      <div class="modal-footer">
+      	<button type="button" class="btn btn-danger" data-dismiss="modal" id="delete-list">Delete</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

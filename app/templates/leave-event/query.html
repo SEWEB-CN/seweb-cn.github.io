@@ -1,0 +1,93 @@
+
+<!-- <div id='query form'></div> -->
+<section class="form-search">
+   <div class="control-group">
+      <label>User</label>
+       <div class="controls">
+          <select class="selectpicker" multiple id="users" title = 'ALL'>
+          <option value="Vincent">Vincent</option>
+          <option value="Liuzhan">Liuzhan</option>
+          <option value="Joe">Joe</option>
+          <option value="Julian">Julian</option>
+         </select>
+       </div>
+    </div>
+
+    <div class="control-group">
+      <label for="leavetype" class="control-label">Leave Type</label>
+      <div class="controls">
+          <select class="selectpicker" id="type" >
+              <option value="ALL" selected>ALL</option>
+              <option value="AnnualLeave">Annual Leave</option>
+              <option value="SickLeave">Sick Leave</option>
+          </select>
+      </div>
+    </div>
+   
+    <div class="control-group">
+          <label for="startdate" class="control-label">start date</label>
+          <div class="controls"><input id="startdate" class="span2" type="text" value="2013-01-12"></div>
+    </div>
+    <div class="control-group">
+          <label for="enddate" class="control-label">end date</label>
+          <div class="controls"><input id="enddate" class="span2" type="text" value="2013-12-12"></div>
+    </div>
+
+    <div class="control-group">
+       <button class="btn" id="query">Search</button>
+    </div>
+
+    <div class="tabbable">
+      <ul class="nav nav-tabs">
+        <li><a href="#tab1" data-toggle="tab">Statistic</a></li>
+        <li class="active"><a href="#tab2" data-toggle="tab">List</a></li>
+      </ul>
+    </div>
+    <div class="tab-content">
+      <div class="tab-pane" id="tab1">
+          
+           <% _.each(data, function(model, data, list){ %>
+
+          <section id="monthly-section">
+            <table class="table table-striped" id="monthly">
+            <tr class="listItem">
+
+            <td><i class="icon-user"></i></td>
+            <td><%=model.attributes.username %></td>
+            <td><%=model.attributes.duration %></td>
+            <td><%=model.attributes.leavetype %></td>
+            <td><%=model.attributes.startdate %></td>
+            <td><%=model.attributes.enddate %></td>
+
+            </tr>
+            </table>
+          </section>
+
+          <% }); %>
+      </div>
+      <div class="tab-pane active" id="tab2">
+          <% _.each(data, function(model, data, list){ %>
+
+          <section id="monthly-section">
+            <table class="table table-striped" id="monthly">
+            <tr class="listItem">
+
+            <td><i class="icon-user"></i></td>
+            <td><%=model.attributes.username %></td>
+            <td><%=model.attributes.duration %></td>
+            <td><%=model.attributes.leavetype %></td>
+            <td><%=model.attributes.startdate %></td>
+            <td><%=model.attributes.enddate %></td>
+
+            </tr>
+            </table>
+          </section>
+
+          <% }); %>
+      </div>
+    </div>
+</section>
+
+
+
+

@@ -1,0 +1,39 @@
+<section id="leave-event-create">
+
+    <ul class="nav nav-tabs" style="border-bottom:0px">
+    <li><button class="btn btn-warning" id="createCancel">Cancel</button></li>
+    <li><div style="width:150px">&nbsp</div></li>
+    <li><button class="btn btn-primary" id="createSubmit">Save</button></li>
+    </ul>
+
+    <div class="control-group">
+      <label for="leavetype" class="control-label">Leave Type</label>
+      <div class="controls">
+          <select class="selectpicker" id="leaveType">
+              <option value="AnnualLeave">Annual Leave</option>
+              <option value="SickLeave">Sick Leave</option>
+          </select>
+      </div>
+    </div>
+   
+    <div class="control-group">
+          <label for="leaveStartdate" class="control-label">start date</label>
+          <div class="controls"><input id="leaveStartdate" class="span2 leavedate" type="text"></div>
+    </div>
+    <div class="control-group">
+          <label for="leaveEnddate" class="control-label">end date</label>
+          <div class="controls"><input id="leaveEnddate" class="span2 leavedate" type="text"></div>
+    </div>
+
+	<div class="btn-group">
+	  <button type="button" class="btn btn-default duration" duration="am" id="duration_am">AM</button>
+	  <button type="button" class="btn btn-default duration" duration="pm" id="duration_pm">PM</button>
+	  <button type="button" class="btn btn-default duration" duration="all" id="duration_all">All day</button>
+	  <input type="hidden" id="leaveDuration" value="all">
+	</div>
+
+	<br><br><br>
+
+	<textarea class="form-control" cols="30" rows="5" placeholder="notes" id="leaveNotes"></textarea>
+    
+</section>
